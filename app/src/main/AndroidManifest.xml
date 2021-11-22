@@ -12,6 +12,7 @@
         <activity
             android:name=".view.ui.activities.MainActivity"
             android:exported="true">
+            <!-- hola k hace -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
