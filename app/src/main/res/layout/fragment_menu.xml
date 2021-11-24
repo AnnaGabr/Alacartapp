@@ -40,7 +40,7 @@
                             android:layout_height="@dimen/logo"
                             android:layout_gravity="center"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/Alacartapp" />
+                            android:src="@drawable/alacartapp" />
 
                     </androidx.cardview.widget.CardView>
 
