@@ -5,7 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryColor"
-    tools:context=".SplashActivity">
+    tools:context=".view.ui.activities.SplashActivity">
+
+    <ImageView
+        android:id="@+id/iv_splash_tittle"
+        android:layout_width="322dp"
+        android:layout_height="139dp"
+        android:layout_marginTop="92dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_ini_2" />
 
     <ImageView
         android:id="@+id/iv_splash_logo"
@@ -16,32 +27,21 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_splash_tittle"
         app:srcCompat="@drawable/logo_ini" />
 
-    <TextView
-        android:id="@+id/tv_splash_tittle"
-        android:layout_width="260dp"
-        android:layout_height="48dp"
-        android:text="Alacartapp"
-        android:textStyle="bold"
-        android:textColor="@color/secondaryTextColor"
-        android:textAlignment="center"
-        android:textSize="40sp"
-        app:layout_constraintTop_toBottomOf="@id/iv_splash_logo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
     <TextView
         android:id="@+id/tv_splash_sub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="come o muere XDDD"
+        android:text="El menú siempre a tu alcance"
         android:textStyle="bold"
         android:textColor="@color/secondaryTextColor"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/tv_splash_tittle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_splash_logo"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

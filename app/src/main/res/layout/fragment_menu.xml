@@ -52,7 +52,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/hambirguesas"
+                            android:src="@drawable/hamburguesas"
                             android:scaleType="centerCrop"/>
 
                     </androidx.cardview.widget.CardView>
