@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Alacartapp">
         <activity
+            android:name=".view.ui.activities.Waiter"
+            android:exported="false" />
+        <activity
             android:name=".view.ui.activities.Menu"
             android:exported="false" />
         <activity
@@ -24,7 +27,7 @@
         </activity>
         <activity
             android:name=".view.ui.activities.MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

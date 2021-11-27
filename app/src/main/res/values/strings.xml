@@ -3,4 +3,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="MenuTitle">Haz tu pedido</string>
+    <string name="WaiterUser">ID</string>
+    <string name="WaiterPassword">Constraseña</string>
+    <string name="WaiterButtonNext">Entrar</string>
+    <string name="WaiterButtonCancel">Cancelar</string>
 </resources>
