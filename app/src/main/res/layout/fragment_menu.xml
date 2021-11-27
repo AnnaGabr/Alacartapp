@@ -20,7 +20,7 @@
             <ImageView
                 android:layout_width="@dimen/logo"
                 android:layout_height="@dimen/logo"
-                android:src="@drawable/logobanner2"
+                android:src="@drawable/logobanner"
                 android:gravity="left"/>
 
             <com.google.android.material.appbar.AppBarLayout
