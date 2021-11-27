@@ -19,12 +19,13 @@
             app:navGraph="@navigation/nav_graph"
             app:defaultNavHost="true"/>
 
-        <com.google.android.material.navigation.NavigationView
+        <com.google.android.material.navigationrail.NavigationRailView
             android:id="@+id/bnavMenu"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            app:menu="@menu/navigation_menu"/>
+            app:menu="@menu/navigation_menu"
+            android:background="@color/primaryDarkColor"/>
 
     </RelativeLayout>
 
