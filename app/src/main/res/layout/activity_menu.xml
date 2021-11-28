@@ -16,8 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_toLeftOf="@id/bnavMenu"
-            app:navGraph="@navigation/nav_graph"
-            app:defaultNavHost="true"/>
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph" />
 
         <com.google.android.material.navigationrail.NavigationRailView
             android:id="@+id/bnavMenu"
@@ -25,7 +25,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             app:menu="@menu/navigation_menu"
-            android:background="@color/primaryDarkColor"/>
+            android:background="@color/primaryDarkColor" />
 
     </RelativeLayout>
 

@@ -7,4 +7,5 @@
     <string name="WaiterPassword">Constraseña</string>
     <string name="WaiterButtonNext">Entrar</string>
     <string name="WaiterButtonCancel">Cancelar</string>
+    <string name="OrderTitle">Tu pedido</string>
 </resources>

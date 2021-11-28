@@ -11,5 +11,6 @@
     <dimen name="cardElevationMainMenu">10dp</dimen>
     <dimen name="cardCornerRadiusMainMenu">10dp</dimen>
     <dimen name="cardMarginMainMenu">10dp</dimen>
+    <dimen name="cardOption">100dp</dimen>
     <item name="titleWeight" type="dimen" format="float">0.5</item>
 </resources>
