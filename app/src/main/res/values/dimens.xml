@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="menuMargin">40dp</dimen>
-    <dimen name="logo">100dp</dimen>
+    <dimen name="menuMargin">30dp</dimen>
+    <dimen name="logo">80dp</dimen>
     <dimen name="tarjetaMenuHeight">90dp</dimen>
     <dimen name="menuDerechaWidth">50dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="bannerHeight">40dp</dimen>
+    <dimen name="BannerTittleSize">20dp</dimen>
+    <dimen name="defaultMarginSize">5dp</dimen>
+    <dimen name="MainTittleSize">30dp</dimen>
+    <dimen name="cardElevationMainMenu">10dp</dimen>
+    <dimen name="cardCornerRadiusMainMenu">10dp</dimen>
+    <dimen name="cardMarginMainMenu">10dp</dimen>
+    <dimen name="marginSubtitle">50</dimen>
+    <dimen name="MainSubTittleSize">20</dimen>
+    <dimen name="secundarySubTittleSize">18</dimen>
+    <dimen name="marginLeftProduct">15</dimen>
+    <dimen name="sizeDescripcionProducto">12</dimen>
+    <item name="titleWeight" type="dimen" format="float">0.5</item>
+    <item name="PizzaTitleWeight" type="dimen" format="float">1</item>
+    <item name="changeLayout" type="dimen" format="float">0.2</item>
+    <item name="titleSpaceProduct" type="dimen" format="float">0.6</item>
+    <item name="footPageProduct" type="dimen" format="float">0.1</item>
+
 </resources>

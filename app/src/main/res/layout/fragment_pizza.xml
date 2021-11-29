@@ -1,26 +1,316 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pizza_fragmet">
+    tools:context="view.ui.fragments.pizza_fragmet">
 
     <!-- TODO: Update blank fragment layout -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
         android:orientation="vertical">
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/logo"
+                android:layout_height="@dimen/logo"
+                android:gravity="left"
+                android:src="@drawable/logobanner" />
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/bannerHeight"
+                android:background="@color/secondaryBackgroundColor">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/defaultMarginSize"
+                    android:gravity="center"
+                    android:text="@string/app_name"
+                    android:textColor="@color/primaryTextColor"
+                    android:textSize="@dimen/BannerTittleSize"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/backgroundColor"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"/>
-        </ScrollView>
+                android:layout_height="0dp"
+                android:layout_weight="@dimen/titleSpaceProduct"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="@dimen/PizzaTitleWeight"
+                    android:gravity="center"
+                    android:text="@string/TitleProductos"
+                    android:textColor="@color/secondaryTextColor"
+                    android:textSize="@dimen/MainTittleSize"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="@dimen/changeLayout"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/imageButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/primaryLightColor"
+                        android:src="@android:drawable/ic_media_previous" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/marginSubtitle"
+                        android:layout_marginRight="@dimen/marginSubtitle"
+                        android:text="@string/pizza"
+                        android:textColor="@color/secondaryTextColor"
+                        android:textSize="@dimen/MainSubTittleSize"
+
+                        />
+
+                    <ImageButton
+                        android:id="@+id/imageButton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/primaryLightColor"
+                        android:src="@android:drawable/ic_media_next" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/menuMargin"
+                android:layout_weight="1"
+                android:background="@color/backgroundColor"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/tarjetaProducto1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/cardMarginMainMenu"
+                    android:layout_weight="1"
+                    android:background="@color/backgroundColor"
+                    app:cardCornerRadius="@dimen/cardCornerRadiusMainMenu"
+                    app:cardElevation="@dimen/cardElevationMainMenu">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/backgroundColorCard"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/pizza_hawaiana" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/subtitleProduct1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/marginLeftProduct"
+                                android:text="@string/producto1"
+                                android:textColor="@color/secondaryTextColor"
+                                android:textSize="@dimen/secundarySubTittleSize"
+                                android:textStyle="bold"
+
+                                />
+
+                            <TextView
+                                android:id="@+id/descriptionProduct1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/marginLeftProduct"
+                                android:text="@string/descripcionProducto1"
+                                android:textColor="@color/secondaryTextColor"
+                                android:textSize="@dimen/sizeDescripcionProducto" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/tarjetaProducto2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/cardMarginMainMenu"
+                    android:layout_weight="1"
+                    android:background="@color/backgroundColor"
+                    app:cardCornerRadius="@dimen/cardCornerRadiusMainMenu"
+                    app:cardElevation="@dimen/cardElevationMainMenu">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/backgroundColorCard"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/pizza_pollo" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/subtitleProduct2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/marginLeftProduct"
+                                android:text="@string/producto2"
+                                android:textColor="@color/secondaryTextColor"
+                                android:textSize="@dimen/secundarySubTittleSize"
+                                android:textStyle="bold"
+
+                                />
+
+                            <TextView
+                                android:id="@+id/descriptionProduct2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/marginLeftProduct"
+                                android:text="@string/descripcionProducto2"
+                                android:textColor="@color/secondaryTextColor"
+                                android:textSize="@dimen/sizeDescripcionProducto" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/tarjetaProducto3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/cardMarginMainMenu"
+                    android:layout_weight="1"
+                    android:background="@color/backgroundColor"
+                    app:cardCornerRadius="@dimen/cardCornerRadiusMainMenu"
+                    app:cardElevation="@dimen/cardElevationMainMenu">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/backgroundColorCard"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/pizza_vegetariana" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/subtitleProduct3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/marginLeftProduct"
+                                android:text="@string/producto3"
+                                android:textColor="@color/secondaryTextColor"
+                                android:textSize="@dimen/secundarySubTittleSize"
+                                android:textStyle="bold"
+
+                                />
+
+                            <TextView
+                                android:id="@+id/descriptionProduct3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/marginLeftProduct"
+                                android:text="@string/descripcionProducto3"
+                                android:textColor="@color/secondaryTextColor"
+                                android:textSize="@dimen/sizeDescripcionProducto" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="@dimen/footPageProduct"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/marginLeftProduct"
+                    android:src="@android:drawable/ic_media_play" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_media_play" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_media_play" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tuPedido"
+                    android:textColor="@color/secondaryTextColor"
+                    android:textSize="@dimen/secundarySubTittleSize"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 
