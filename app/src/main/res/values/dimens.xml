@@ -4,4 +4,5 @@
     <dimen name="logo">100dp</dimen>
     <dimen name="tarjetaMenuHeight">90dp</dimen>
     <dimen name="menuDerechaWidth">50dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 </resources>

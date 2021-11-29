@@ -7,6 +7,10 @@
         <entry key="..\:/CICLO4/GIT/Alacartapp/app/src/main/res/layout/activity_splash.xml" value="0.2" />
         <entry key="..\:/CICLO4/GIT/Alacartapp/app/src/main/res/layout/fragment_menu.xml" value="0.16" />
         <entry key="..\:/Users/Gaby/Documents/MinTIC/Programacion/Ciclo4/Alacartapp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_item.xml" value="0.35520833333333335" />
+        <entry key="app/src/main/res/layout/fragment_item_list.xml" value="0.3411458333333333" />
+        <entry key="app/src/main/res/layout/fragment_menu.xml" value="0.35520833333333335" />
+        <entry key="app/src/main/res/layout/fragment_pizza.xml" value="0.2871376811594203" />
       </map>
     </option>
   </component>
