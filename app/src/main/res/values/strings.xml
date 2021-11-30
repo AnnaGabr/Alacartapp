@@ -17,4 +17,11 @@
     <string name="producto3">Vegetariana</string>
     <string name="descripcionProducto3">Cebolla, Pimentón, Champiñon y Tomate.</string>
     <string name="tuPedido">Tu Pedido</string>
+    <string name="clientProduct1">Pizza Super pollo</string>
+    <string name="Cantidad">Cantidad</string>
+    <string name="amountProduct1">1</string>
+    <string name="priceClientProduct1">18000</string>
+    <string name="Total">Total</string>
+    <string name="totalPriceClientOrder">18 000</string>
+    <string name="COPsign">$</string>
 </resources>
