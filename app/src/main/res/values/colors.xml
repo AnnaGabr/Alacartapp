@@ -10,4 +10,5 @@
     <color name="secondaryTextColor">#ffffff</color>
     <color name="backgroundColor">#000000</color>
     <color name="secondaryBackgroundColor">#ffffff</color>
+    <color name="backgroundColorCard">#202020</color>
 </resources>

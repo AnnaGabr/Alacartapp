@@ -8,4 +8,13 @@
     <string name="WaiterButtonNext">Entrar</string>
     <string name="WaiterButtonCancel">Cancelar</string>
     <string name="OrderTitle">Tu pedido</string>
+    <string name="TitleProductos">Haz tu pedido</string>
+    <string name="pizza">Pizzas</string>
+    <string name="producto1">Hawaiana</string>
+    <string name="descripcionProducto1">Extra Queso, Jamón y Piña.</string>
+    <string name="producto2">Supér pollo</string>
+    <string name="descripcionProducto2">Tradicional Mezcla de Trocitos de Pechuga de Champiñones Frescos y Extra Queso.</string>
+    <string name="producto3">Vegetariana</string>
+    <string name="descripcionProducto3">Cebolla, Pimentón, Champiñon y Tomate.</string>
+    <string name="tuPedido">Tu Pedido</string>
 </resources>

@@ -65,7 +65,7 @@
                 android:layout_margin="@dimen/menuMargin">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/tarjetaMenuHamburguesas"
+                    android:id="@+id/tarjetaProducto1"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
