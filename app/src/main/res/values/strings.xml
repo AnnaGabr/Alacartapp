@@ -16,4 +16,11 @@
     <string name="producto3">Vegetariana</string>
     <string name="descripcionProducto3">Cebolla, Pimentón, Champiñon y Tomate.</string>
     <string name="tuPedido">Tu Pedido</string>
+    <string name="bebidas">Bebidas</string>
+    <string name="Bebida1">Jugo Natural</string>
+    <string name="descripcionBebida1">Jugo natural en Agua con o Sin Azucar</string>
+    <string name="Bebida2">Gaseosa</string>
+    <string name="descripcionBebida2">Bebida refrescante y efervescente elaborada con agua, ácido carbónico y azúcar.</string>
+    <string name="Bebida3">Limonada</string>
+    <string name="descripcionBebida3">A base de limón, agua y azúcar</string>
 </resources>
