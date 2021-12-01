@@ -2,6 +2,42 @@
     <string name="app_name">Alacartapp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="MenuTitle">Haz tu pedido</string>
+    <string name="WaiterUser">ID</string>
+    <string name="WaiterPassword">Constraseña</string>
+    <string name="WaiterButtonNext">Entrar</string>
+    <string name="WaiterButtonCancel">Cancelar</string>
+    <string name="TitleProductos">Haz tu pedido</string>
+
+    <string name="pizza">Pizzas</string>
+    <string name="producto1">Hawaiana</string>
+    <string name="descripcionProducto1">Extra Queso, Jamón y Piña.</string>
+    <string name="producto2">Supér pollo</string>
+    <string name="descripcionProducto2">Tradicional Mezcla de Trocitos de Pechuga de Champiñones Frescos y Extra Queso.</string>
+    <string name="producto3">Vegetariana</string>
+    <string name="descripcionProducto3">Cebolla, Pimentón, Champiñon y Tomate.</string>
+    <string name="tuPedido">Tu Pedido</string>
+    <string name="bebidas">Bebidas</string>
+    <string name="Bebida1">Jugo Natural</string>
+    <string name="descripcionBebida1">Jugo natural en Agua con o Sin Azucar</string>
+    <string name="Bebida2">Gaseosa</string>
+    <string name="descripcionBebida2">Bebida refrescante y efervescente elaborada con agua, ácido carbónico y azúcar.</string>
+    <string name="Bebida3">Limonada</string>
+    <string name="descripcionBebida3">A base de limón, agua y azúcar</string>
+
+    <string name="hamburguers">Hamburguesas</string>
+    <string name="hproducto1">La Real</string>
+    <string name="hdescripcionProducto1">180 gramos de picanha, cheddar doble, bacon crujiente</string>
+    <string name="hproducto2">FITZ BURGER</string>
+    <string name="hdescripcionProducto2">170 gramos de nuestra carne ecológica de VACA RUBIA GALLEGA, pepinillos, bacon, queso cheddar inglés.</string>
+    <string name="hproducto3">BACONJUANCHEESEBURGER</string>
+    <string name="hdescripcionProducto3">250gr. De carne, con queso cheddar fundido y panceta ibérica macerada al cubata</string>
+    <string name="htuPedido">Tu Pedido</string>
+    <string name="hbebidas">Bebidas</string>
+    <string name="hBebida1">Jugo Natural</string>
+    <string name="hdescripcionBebida1">Jugo natural en Agua con o Sin Azucar</string>
+    <string name="hBebida2">Gaseosa</string>
+    <string name="hdescripcionBebida2">Bebida refrescante y efervescente elaborada con agua, ácido carbónico y azúcar.</string>
+    <string name="hBebida3">Limonada</string>
+    <string name="hdescripcionBebida3">A base de limón, agua y azúcar</string>
 </resources>

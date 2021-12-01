@@ -87,7 +87,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/marginSubtitle"
                         android:layout_marginRight="@dimen/marginSubtitle"
-                        android:text="@string/pizza"
+                        android:text="@string/hamburguers"
                         android:textColor="@color/secondaryTextColor"
                         android:textSize="@dimen/MainSubTittleSize"
 
@@ -144,7 +144,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/marginLeftProduct"
-                                android:text="@string/producto1"
+                                android:text="@string/hproducto1"
                                 android:textColor="@color/secondaryTextColor"
                                 android:textSize="@dimen/secundarySubTittleSize"
                                 android:textStyle="bold"
@@ -156,7 +156,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/marginLeftProduct"
-                                android:text="@string/descripcionProducto1"
+                                android:text="@string/hdescripcionProducto1"
                                 android:textColor="@color/secondaryTextColor"
                                 android:textSize="@dimen/sizeDescripcionProducto" />
                         </LinearLayout>
@@ -197,7 +197,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/marginLeftProduct"
-                                android:text="@string/producto2"
+                                android:text="@string/hproducto2"
                                 android:textColor="@color/secondaryTextColor"
                                 android:textSize="@dimen/secundarySubTittleSize"
                                 android:textStyle="bold"
@@ -209,7 +209,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/marginLeftProduct"
-                                android:text="@string/descripcionProducto2"
+                                android:text="@string/hdescripcionProducto2"
                                 android:textColor="@color/secondaryTextColor"
                                 android:textSize="@dimen/sizeDescripcionProducto" />
                         </LinearLayout>
@@ -250,7 +250,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/marginLeftProduct"
-                                android:text="@string/producto3"
+                                android:text="@string/hproducto3"
                                 android:textColor="@color/secondaryTextColor"
                                 android:textSize="@dimen/secundarySubTittleSize"
                                 android:textStyle="bold"
@@ -262,7 +262,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/marginLeftProduct"
-                                android:text="@string/descripcionProducto3"
+                                android:text="@string/hdescripcionProducto3"
                                 android:textColor="@color/secondaryTextColor"
                                 android:textSize="@dimen/sizeDescripcionProducto" />
                         </LinearLayout>
@@ -271,7 +271,7 @@
                 </androidx.cardview.widget.CardView>
 
 
-            </LinearLayout>
+        </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
