@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.alacartapp.view.ui.fragments.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_pedido"
+            app:destination="@id/pedido" />
+        <action
+            android:id="@+id/action_menuFragment_to_pizza_fragmet"
+            app:destination="@id/pizza_fragmet" />
+    </fragment>
+    <fragment
+        android:id="@+id/pedido"
+        android:name="com.example.alacartapp.view.ui.fragments.Pedido"
+        android:label="fragment_pedido"
+        tools:layout="@layout/fragment_pedido" />
+    <fragment
+        android:id="@+id/pizza_fragmet"
+        android:name="com.example.alacartapp.view.ui.fragments.pizza_fragmet"
+        android:label="pizza_fragmet" />
+</navigation>

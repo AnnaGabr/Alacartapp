@@ -2,4 +2,32 @@
     <string name="app_name">Alacartapp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="MenuTitle">Haz tu pedido</string>
+    <string name="WaiterUser">ID</string>
+    <string name="WaiterPassword">Constraseña</string>
+    <string name="WaiterButtonNext">Entrar</string>
+    <string name="WaiterButtonCancel">Cancelar</string>
+    <string name="TitleProductos">Haz tu pedido</string>
+    <string name="pizza">Pizzas</string>
+    <string name="producto1">Hawaiana</string>
+    <string name="descripcionProducto1">Extra Queso, Jamón y Piña.</string>
+    <string name="producto2">Supér pollo</string>
+    <string name="descripcionProducto2">Tradicional Mezcla de Trocitos de Pechuga de Champiñones Frescos y Extra Queso.</string>
+    <string name="producto3">Vegetariana</string>
+    <string name="descripcionProducto3">Cebolla, Pimentón, Champiñon y Tomate.</string>
+    <string name="tuPedido">Tu Pedido</string>
+    <string name="clientProduct1">Pizza Super pollo</string>
+    <string name="Cantidad">Cantidad</string>
+    <string name="amountProduct1">1</string>
+    <string name="priceClientProduct1">18000</string>
+    <string name="Total">Total</string>
+    <string name="totalPriceClientOrder">18 000</string>
+    <string name="COPsign">$</string>
+    <string name="bebidas">Bebidas</string>
+    <string name="Bebida1">Jugo Natural</string>
+    <string name="descripcionBebida1">Jugo natural en Agua con o Sin Azucar</string>
+    <string name="Bebida2">Gaseosa</string>
+    <string name="descripcionBebida2">Bebida refrescante y efervescente elaborada con agua, ácido carbónico y azúcar.</string>
+    <string name="Bebida3">Limonada</string>
+    <string name="descripcionBebida3">A base de limón, agua y azúcar</string>
 </resources>
