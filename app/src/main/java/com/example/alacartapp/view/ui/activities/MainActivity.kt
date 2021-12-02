@@ -16,5 +16,6 @@ class MainActivity : AppCompatActivity() {
                 .add(R.id.container, MenuFragment())
                 .commit()
         }
+
     }
 }
