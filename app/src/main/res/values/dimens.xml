@@ -12,7 +12,10 @@
     <dimen name="cardElevationMainMenu">10dp</dimen>
     <dimen name="cardCornerRadiusMainMenu">10dp</dimen>
     <dimen name="cardMarginMainMenu">10dp</dimen>
+<<<<<<< HEAD
     <dimen name="cardOption">70dp</dimen>
+=======
+>>>>>>> jeison
     <dimen name="marginSubtitle">50</dimen>
     <dimen name="MainSubTittleSize">20</dimen>
     <dimen name="secundarySubTittleSize">18</dimen>
@@ -23,4 +26,8 @@
     <item name="changeLayout" type="dimen" format="float">0.2</item>
     <item name="titleSpaceProduct" type="dimen" format="float">0.6</item>
     <item name="footPageProduct" type="dimen" format="float">0.1</item>
+<<<<<<< HEAD
+=======
+
+>>>>>>> jeison
 </resources>
