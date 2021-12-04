@@ -8,10 +8,6 @@
     <string name="WaiterButtonNext">Entrar</string>
     <string name="WaiterButtonCancel">Cancelar</string>
     <string name="TitleProductos">Haz tu pedido</string>
-<<<<<<< HEAD
-=======
-
->>>>>>> jeison
     <string name="pizza">Pizzas</string>
     <string name="producto1">Hawaiana</string>
     <string name="descripcionProducto1">Extra Queso, Jamón y Piña.</string>
@@ -20,7 +16,6 @@
     <string name="producto3">Vegetariana</string>
     <string name="descripcionProducto3">Cebolla, Pimentón, Champiñon y Tomate.</string>
     <string name="tuPedido">Tu Pedido</string>
-<<<<<<< HEAD
     <string name="clientProduct1">Pizza Super pollo</string>
     <string name="Cantidad">Cantidad</string>
     <string name="amountProduct1">1</string>
@@ -28,8 +23,6 @@
     <string name="Total">Total</string>
     <string name="totalPriceClientOrder">18 000</string>
     <string name="COPsign">$</string>
-=======
->>>>>>> jeison
     <string name="bebidas">Bebidas</string>
     <string name="Bebida1">Jugo Natural</string>
     <string name="descripcionBebida1">Jugo natural en Agua con o Sin Azucar</string>
@@ -37,9 +30,6 @@
     <string name="descripcionBebida2">Bebida refrescante y efervescente elaborada con agua, ácido carbónico y azúcar.</string>
     <string name="Bebida3">Limonada</string>
     <string name="descripcionBebida3">A base de limón, agua y azúcar</string>
-<<<<<<< HEAD
-=======
-
     <string name="hamburguers">Hamburguesas</string>
     <string name="hproducto1">La Real</string>
     <string name="hdescripcionProducto1">180 gramos de picanha, cheddar doble, bacon crujiente</string>
@@ -55,5 +45,4 @@
     <string name="hdescripcionBebida2">Bebida refrescante y efervescente elaborada con agua, ácido carbónico y azúcar.</string>
     <string name="hBebida3">Limonada</string>
     <string name="hdescripcionBebida3">A base de limón, agua y azúcar</string>
->>>>>>> jeison
 </resources>
