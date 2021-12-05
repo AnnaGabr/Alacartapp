@@ -3,35 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Gaby/Documents/MinTIC/Programacion/Ciclo4/Alacartapp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2203125" />
-        <entry key="..\:/Users/Gaby/Documents/MinTIC/Programacion/Ciclo4/Alacartapp/app/src/main/res/drawable/ic_baseline_call_24.xml" value="0.1" />
-        <entry key="..\:/Users/Gaby/Documents/MinTIC/Programacion/Ciclo4/Alacartapp/app/src/main/res/drawable/ic_baseline_menu_book_24.xml" value="0.1" />
-        <entry key="..\:/Users/Gaby/Documents/MinTIC/Programacion/Ciclo4/Alacartapp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2203125" />
+        <entry key="..\:/CICLO4/GIT/Alacartapp/app/src/main/res/layout/activity_main.xml" value="0.12771739130434784" />
+        <entry key="..\:/CICLO4/GIT/Alacartapp/app/src/main/res/layout/activity_splash.xml" value="0.2" />
+        <entry key="..\:/CICLO4/GIT/Alacartapp/app/src/main/res/layout/fragment_menu.xml" value="0.16" />
         <entry key="..\:/Users/Gaby/Documents/MinTIC/Programacion/Ciclo4/Alacartapp/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/Gaby/Documents/MinTIC/Programacion/Ciclo4/Alacartapp/app/src/main/res/layout/activity_menu.xml" value="0.22" />
-        <entry key="..\:/Users/Gaby/Documents/MinTIC/Programacion/Ciclo4/Alacartapp/app/src/main/res/layout/activity_waiter.xml" value="0.1" />
-        <entry key="..\:/Users/Gaby/Documents/MinTIC/Programacion/Ciclo4/Alacartapp/app/src/main/res/layout/fragment_menu.xml" value="0.22" />
-        <entry key="..\:/Users/Gaby/Documents/MinTIC/Programacion/Ciclo4/Alacartapp/app/src/main/res/layout/fragment_menu_prueba.xml" value="0.22" />
-        <entry key="..\:/Users/Gaby/Documents/MinTIC/Programacion/Ciclo4/Alacartapp/app/src/main/res/layout/fragment_pedido.xml" value="0.16" />
-        <entry key="..\:/Users/Gaby/Documents/MinTIC/Programacion/Ciclo4/Alacartapp/app/src/main/res/layout/fragment_pizza.xml" value="0.21" />
-        <entry key="..\:/Users/Gaby/Documents/MinTIC/Programacion/Ciclo4/Alacartapp/app/src/main/res/layout/fragment_waiter_login.xml" value="0.2" />
-        <entry key="..\:/Users/Gaby/Documents/MinTIC/Programacion/Ciclo4/Alacartapp/app/src/main/res/layout/waiterloginprueba.xml" value="0.1" />
-        <entry key="..\:/Users/Gaby/Documents/MinTIC/Programacion/Ciclo4/Alacartapp/app/src/main/res/menu/navigation_menu.xml" value="0.22" />
         <entry key="..\:/Users/ejehe/Documents/P49-Mintic/ProjectCode/Alacartapp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.13072916666666667" />
         <entry key="..\:/Users/ejehe/Documents/P49-Mintic/ProjectCode/Alacartapp/app/src/main/res/layout/activity_splash.xml" value="0.13020833333333334" />
-        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.37135416666666665" />
-        <entry key="app/src/main/res/drawable/ic_baseline_call_24.xml" value="0.37135416666666665" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3496376811594203" />
-        <entry key="app/src/main/res/layout/activity_menu.xml" value="0.3496376811594203" />
-        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.35520833333333335" />
-        <entry key="app/src/main/res/layout/activity_waiter.xml" value="0.35520833333333335" />
-        <entry key="app/src/main/res/layout/fragment_bebidas.xml" value="0.19791666666666666" />
-        <entry key="app/src/main/res/layout/fragment_hamburguers.xml" value="0.19791666666666666" />
-        <entry key="app/src/main/res/layout/fragment_menu.xml" value="0.3496376811594203" />
-        <entry key="app/src/main/res/layout/fragment_pedido.xml" value="0.35520833333333335" />
-        <entry key="app/src/main/res/layout/fragment_pizza.xml" value="0.3496376811594203" />
-        <entry key="app/src/main/res/layout/fragment_waiter_login.xml" value="0.35520833333333335" />
-        <entry key="app/src/main/res/menu/navigation_menu.xml" value="0.35520833333333335" />
+        <entry key="..\:/Users/ejehe/Documents/P49-Mintic/ProjectCode/Alacartapp/app/src/main/res/layout/fragment_hamburguers.xml" value="0.2" />
+        <entry key="..\:/Users/ejehe/Documents/P49-Mintic/ProjectCode/Alacartapp/app/src/main/res/layout/products_card_view_layout.xml" value="0.4" />
       </map>
     </option>
   </component>

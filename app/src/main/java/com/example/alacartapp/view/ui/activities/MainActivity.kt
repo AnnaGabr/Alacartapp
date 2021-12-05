@@ -7,6 +7,8 @@ import android.widget.ImageButton
 import com.example.alacartapp.R
 import com.example.alacartapp.databinding.ActivityMainBinding
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.alacartapp.view.ui.fragments.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_bebidas.*
@@ -43,7 +45,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+
     }
+
 
 
 
