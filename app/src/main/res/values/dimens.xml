@@ -13,11 +13,11 @@
     <dimen name="cardCornerRadiusMainMenu">10dp</dimen>
     <dimen name="cardMarginMainMenu">10dp</dimen>
     <dimen name="cardOption">70dp</dimen>
-    <dimen name="marginSubtitle">50</dimen>
-    <dimen name="MainSubTittleSize">20</dimen>
-    <dimen name="secundarySubTittleSize">18</dimen>
-    <dimen name="marginLeftProduct">15</dimen>
-    <dimen name="sizeDescripcionProducto">12</dimen>
+    <dimen name="marginSubtitle">50dp</dimen>
+    <dimen name="MainSubTittleSize">20dp</dimen>
+    <dimen name="secundarySubTittleSize">18dp</dimen>
+    <dimen name="marginLeftProduct">15dp</dimen>
+    <dimen name="sizeDescripcionProducto">12dp</dimen>
     <item name="titleWeight" type="dimen" format="float">0.5</item>
     <item name="PizzaTitleWeight" type="dimen" format="float">1</item>
     <item name="changeLayout" type="dimen" format="float">0.2</item>

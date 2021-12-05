@@ -3,27 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/menuFragment">
+    app:startDestination="@id/menu_fragment">
 
     <fragment
-        android:id="@+id/menuFragment"
+        android:id="@+id/menu_fragment"
         android:name="com.example.alacartapp.view.ui.fragments.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
         <action
             android:id="@+id/action_menuFragment_to_pedido"
             app:destination="@id/pedido" />
-        <action
-            android:id="@+id/action_menuFragment_to_pizza_fragmet"
-            app:destination="@id/pizza_fragmet" />
     </fragment>
     <fragment
         android:id="@+id/pedido"
         android:name="com.example.alacartapp.view.ui.fragments.Pedido"
         android:label="fragment_pedido"
-        tools:layout="@layout/fragment_pedido" />
+        tools:layout="@layout/fragment_pedido" >
+        <action
+            android:id="@+id/action_pedido_to_waiter_login"
+            app:destination="@id/waiter_login" />
+    </fragment>
     <fragment
-        android:id="@+id/pizza_fragmet"
-        android:name="com.example.alacartapp.view.ui.fragments.pizza_fragmet"
-        android:label="pizza_fragmet" />
+        android:id="@+id/waiter_login"
+        android:name="com.example.alacartapp.view.ui.fragments.Waiter_login"
+        android:label="fragment_waiter_login"
+        tools:layout="@layout/fragment_waiter_login" />
 </navigation>
