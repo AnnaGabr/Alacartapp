@@ -25,6 +25,8 @@
         <entry key="app/src/main/res/layout/activity_menu.xml" value="0.3496376811594203" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/activity_waiter.xml" value="0.35520833333333335" />
+        <entry key="app/src/main/res/layout/fragment_bebidas.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/fragment_hamburguers.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/fragment_menu.xml" value="0.3496376811594203" />
         <entry key="app/src/main/res/layout/fragment_pedido.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/fragment_pizza.xml" value="0.3496376811594203" />

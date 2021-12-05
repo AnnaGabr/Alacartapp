@@ -75,7 +75,7 @@
                     android:orientation="horizontal">
 
                     <ImageButton
-                        android:id="@+id/imageButton"
+                        android:id="@+id/fromPizzaToHamburger"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/primaryLightColor"
@@ -94,7 +94,7 @@
                         />
 
                     <ImageButton
-                        android:id="@+id/imageButton2"
+                        android:id="@+id/fromPizzaToBebidas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/primaryLightColor"
@@ -299,7 +299,7 @@
                     android:src="@android:drawable/ic_media_play" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/fromPizzaToPedido"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

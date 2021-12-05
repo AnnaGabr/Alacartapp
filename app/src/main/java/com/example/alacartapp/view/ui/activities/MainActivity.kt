@@ -2,18 +2,17 @@ package com.example.alacartapp.view.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
+import android.widget.Button
+import android.widget.ImageButton
 import com.example.alacartapp.R
 import com.example.alacartapp.databinding.ActivityMainBinding
-import com.example.alacartapp.view.ui.fragments.MenuFragment
-import com.google.android.material.bottomnavigation.BottomNavigationItemView
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigationrail.NavigationRailView
 import android.widget.Toast
-import com.example.alacartapp.view.ui.fragments.Pedido
-import com.example.alacartapp.view.ui.fragments.Waiter_login
+import com.example.alacartapp.view.ui.fragments.*
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_bebidas.*
+import kotlinx.android.synthetic.main.fragment_hamburguers.*
+import kotlinx.android.synthetic.main.fragment_menu.*
+import kotlinx.android.synthetic.main.fragment_pizza.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,19 +29,16 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.navMenu -> {
                     supportFragmentManager.beginTransaction().replace(R.id.fragmentContent, MenuFragment()).commit()
-                    //Toast.makeText(this, "menu", Toast.LENGTH_SHORT).show()
                     true
                 }
 
                 R.id.navOrder -> {
                     supportFragmentManager.beginTransaction().replace(R.id.fragmentContent, Pedido()).commit()
-                    //Toast.makeText(this, "pedido", Toast.LENGTH_SHORT).show()
                     true
                 }
 
                 else -> {
                     supportFragmentManager.beginTransaction().replace(R.id.fragmentContent, Waiter_login()).commit()
-                    //Toast.makeText(this, "servic", Toast.LENGTH_SHORT).show()
                     true
                 }
             }

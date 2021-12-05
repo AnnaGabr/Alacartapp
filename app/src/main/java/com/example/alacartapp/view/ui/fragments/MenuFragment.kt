@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.alacartapp.R
+import android.widget.Toast
+import kotlinx.android.synthetic.main.fragment_menu.*
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +39,30 @@ class MenuFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_menu, container, false)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        tarjetaMenuHamburguesas.setOnClickListener{
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmentContent, HamburguersFragment()).commit()
+
+        }
+
+        tarjetaMenuPizzas.setOnClickListener{
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmentContent, pizza_fragmet()).commit()
+
+
+        }
+
+        tarjetaMenuBebidas.setOnClickListener{
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmentContent, bebidas_fragment()).commit()
+
+
+        }
     }
 
     companion object {
