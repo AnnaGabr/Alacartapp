@@ -91,21 +91,22 @@ class HamburguersFragment : Fragment() {
     private fun products(): MutableList<ProductsModel>{
         var productsModels : MutableList<ProductsModel> = ArrayList()
         productsModels.add(
-            ProductsModel("La Todo Terreno", "Haburguesa con 125g de carne de res" +
-                "+huevo+pan de papa + Gaseosa + Papas", "11000")
+            ProductsModel("@drawable/hamburguer_2","WHOPPER® Veggie", "Los ingredientes principales son soya," +
+                    " trigo, aceite vegetal y hierbas. Además, contiene 0% colesterol y en comparación a una Whopper® original," +
+                    " contiene 30% menos calorías y 40% menos grasa.\n", "$ 18.900")
         )
         productsModels.add(
-            ProductsModel("Cuarto de libra", "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas" +
+            ProductsModel("@drawable/hamburguer_2","Cuarto de libra", "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas" +
                 "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas" +
                 "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas   ", "22.000$")
         )
-        productsModels.add(ProductsModel("Wrapper", "Haburguesa con 50g de carne de pavo+huevo+pan de papa+ Gaseosa + Papas","80900&"))
+        productsModels.add(ProductsModel("@drawable/hamburguer_2","Wrapper", "Haburguesa con 50g de carne de pavo+huevo+pan de papa+ Gaseosa + Papas","80900&"))
         productsModels.add(
-            ProductsModel("La Todo Terreno", "Haburguesa con 125g de carne de res" +
+            ProductsModel("@drawable/hamburguer_2","La Todo Terreno", "Haburguesa con 125g de carne de res" +
                 "+huevo+pan de papa + Gaseosa + Papas","$55.000")
         )
         productsModels.add(
-            ProductsModel("Cuarto de libra", "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas" +
+            ProductsModel("@drawable/hamburguer_2","Cuarto de libra", "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas" +
                 "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas" +
                 "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas   ","1234.543")
         )
