@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.alacartapp.R
+import com.example.alacartapp.view.ui.activities.ProductsModel
+import com.example.alacartapp.view.ui.activities.RecyclerViewAdapter
 import kotlinx.android.synthetic.main.fragment_bebidas.*
 import kotlinx.android.synthetic.main.fragment_hamburguers.*
 import kotlinx.android.synthetic.main.fragment_pizza.*
@@ -57,6 +61,21 @@ class pizza_fragmet : Fragment() {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragmentContent, Pedido()).commit()
         }
+
+        //// --------- Recycler View Implementation -----------////
+        val recycler : RecyclerView = requireActivity().findViewById(R.id.rvMainActivity)
+        val adapter : RecyclerViewAdapter = RecyclerViewAdapter()
+
+
+        //Configuracón del Adapter
+        adapter.RecyclerViewAdapter(products(), context = requireContext())
+
+        // Configuración del recycler View
+        recycler.hasFixedSize()
+        recycler.layoutManager = LinearLayoutManager(requireContext())
+        recycler.adapter = adapter
+        //// --------- End of Recycler View Implementation -----------////
+
     }
 
 
@@ -79,4 +98,33 @@ class pizza_fragmet : Fragment() {
                 }
             }
     }
+    //// --------- Hardcode Products Info -----------////
+    private fun products(): MutableList<ProductsModel>{
+        var productsModels : MutableList<ProductsModel> = ArrayList()
+        productsModels.add(
+            ProductsModel(R.drawable.whopperveggie,"Pizza 1", "Los ingredientes principales son soya," +
+                    " trigo, aceite vegetal y hierbas. Además, contiene 0% colesterol y en comparación a una Whopper® original," +
+                    " contiene 30% menos calorías y 40% menos grasa.\n", "$ 18.900")
+        )
+
+        productsModels.add(
+            ProductsModel(R.drawable.steakhouseking,"Pizza 2",
+                "Cuenta con dos deliciosas carnes de res a la parrilla , tocino crujiente, deliciosa salsa BBQ y cebollitas crispy.",
+                "$ 27.900")
+        )
+
+        productsModels.add(
+            ProductsModel(R.drawable.hamburguesadoblequesoytocineta,"Pizza 3",
+                "Hamburguesa con dos carnes a la parrilla, tocino ahumado con una capa de queso americano derretido, pepinillos frescos, ketchup sobre un pan crujiente con ajonjolí.",
+                "$ 17.900")
+        )
+
+        productsModels.add(
+            ProductsModel(R.drawable.hamburguesaxtbbqpng,"XT® BBQ",
+                "Cuenta con una carne de res a la parrilla de 198 gr, queso, lechuga, tomates, cebolla crujiente, salsa BBQ y cremosa mayonesa sobre un pan esponjoso de maíz.",
+                "$ 32.900")
+        )
+        return productsModels
+    }
+    //// --------- End of Hardcode Products Info -----------////
 }

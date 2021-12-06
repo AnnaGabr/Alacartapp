@@ -59,7 +59,7 @@ class HamburguersFragment : Fragment() {
             transaction.replace(R.id.fragmentContent, Pedido()).commit()
         }
 
-        /// Recycler View Implementation
+        //// --------- Recycler View Implementation -----------////
         val recycler : RecyclerView = requireActivity().findViewById(R.id.rvMainActivity)
         val adapter : RecyclerViewAdapter = RecyclerViewAdapter()
 
@@ -71,6 +71,7 @@ class HamburguersFragment : Fragment() {
         recycler.hasFixedSize()
         recycler.layoutManager = LinearLayoutManager(requireContext())
         recycler.adapter = adapter
+        //// --------- End of Recycler View Implementation -----------////
 
 
     }
@@ -88,6 +89,7 @@ class HamburguersFragment : Fragment() {
             }
     }
 
+    //// --------- Hardcode Products Info -----------////
     private fun products(): MutableList<ProductsModel>{
         var productsModels : MutableList<ProductsModel> = ArrayList()
         productsModels.add(
@@ -115,5 +117,6 @@ class HamburguersFragment : Fragment() {
         )
         return productsModels
     }
+    //// --------- End of Hardcode Products Info -----------////
 
 }
