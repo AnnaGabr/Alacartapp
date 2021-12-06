@@ -100,176 +100,27 @@
                 </LinearLayout>
             </LinearLayout>
 
+            <androidx.constraintlayout.widget.ConstraintLayout
 
-            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="@dimen/menuMargin"
                 android:layout_weight="1"
                 android:background="@color/backgroundColor"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:context=".MainActivity">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/tarjetaBebida1"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMainActivity"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_margin="@dimen/cardMarginMainMenu"
-                    android:layout_weight="1"
-                    android:background="@color/backgroundColor"
-                    app:cardCornerRadius="@dimen/cardCornerRadiusMainMenu"
-                    app:cardElevation="@dimen/cardElevationMainMenu">
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/backgroundColorCard"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/jugo_natural" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/subtitleProduct1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/marginLeftProduct"
-                                android:text="@string/Bebida1"
-                                android:textColor="@color/secondaryTextColor"
-                                android:textSize="@dimen/secundarySubTittleSize"
-                                android:textStyle="bold"
-
-                                />
-
-                            <TextView
-                                android:id="@+id/descriptionProduct1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/marginLeftProduct"
-                                android:text="@string/descripcionBebida1"
-                                android:textColor="@color/secondaryTextColor"
-                                android:textSize="@dimen/sizeDescripcionProducto" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/tarjetaBebida2"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_margin="@dimen/cardMarginMainMenu"
-                    android:layout_weight="1"
-                    android:background="@color/backgroundColor"
-                    app:cardCornerRadius="@dimen/cardCornerRadiusMainMenu"
-                    app:cardElevation="@dimen/cardElevationMainMenu">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/backgroundColorCard"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/gaseosa" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/subtitleProduct2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/marginLeftProduct"
-                                android:text="@string/Bebida2"
-                                android:textColor="@color/secondaryTextColor"
-                                android:textSize="@dimen/secundarySubTittleSize"
-                                android:textStyle="bold"
-
-                                />
-
-                            <TextView
-                                android:id="@+id/descriptionProduct2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/marginLeftProduct"
-                                android:text="@string/descripcionBebida2"
-                                android:textColor="@color/secondaryTextColor"
-                                android:textSize="@dimen/sizeDescripcionProducto" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/tarjetaBebida3"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_margin="@dimen/cardMarginMainMenu"
-                    android:layout_weight="1"
-                    android:background="@color/backgroundColor"
-                    app:cardCornerRadius="@dimen/cardCornerRadiusMainMenu"
-                    app:cardElevation="@dimen/cardElevationMainMenu">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/backgroundColorCard"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/limonada" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/subtitleProduct3"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/marginLeftProduct"
-                                android:text="@string/Bebida3"
-                                android:textColor="@color/secondaryTextColor"
-                                android:textSize="@dimen/secundarySubTittleSize"
-                                android:textStyle="bold"
-
-                                />
-
-                            <TextView
-                                android:id="@+id/descriptionProduct3"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/marginLeftProduct"
-                                android:text="@string/descripcionBebida3"
-                                android:textColor="@color/secondaryTextColor"
-                                android:textSize="@dimen/sizeDescripcionProducto" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
+                </androidx.recyclerview.widget.RecyclerView>
 
 
-            </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
