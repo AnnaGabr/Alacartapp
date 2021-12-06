@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:animateLayoutChanges="true"
         android:orientation="vertical">
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -24,60 +24,63 @@
             <ImageView
                 android:id="@+id/iv_Products"
                 android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:paddingLeft="14dp"
-                android:paddingRight="14dp"
-                app:srcCompat="@drawable/hambirguesas"></ImageView>
+                android:layout_height="0dp"
+                app:srcCompat="@drawable/hambirguesas"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
-            <LinearLayout
-                android:id="@+id/llProducts"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/tvProductName"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="4dp"
+                android:layout_marginBottom="2dp"
                 android:layout_marginTop="2dp"
-                android:layout_toEndOf="@id/iv_Products"
-                android:orientation="vertical"
-                android:layout_marginLeft="4dp"
-                android:layout_toRightOf="@id/iv_Products"
-                >
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="Products 1"
+                android:textColor="@color/secondaryTextColor"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tvProductDescription"
+                app:layout_constraintLeft_toRightOf="@+id/iv_Products"
+                app:layout_constraintRight_toLeftOf="@id/tvProductPrice"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/tvProductName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="2dp"
-                    android:text="Products 1"
-                    android:textColor="@color/primaryTextColor"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/tvProductDescription"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:text="Descriptions of Products"
-                    android:textSize="14sp" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/tvProductDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="Products description text view"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/tvProductName"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/iv_Products"
+                app:layout_constraintRight_toLeftOf="@id/tvProductPrice"/>
 
             <TextView
                 android:id="@+id/tvProductPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="4dp"
                 android:layout_marginEnd="4dp"
-                android:text="10.999"
+                android:text="$10.999"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                android:layout_alignParentEnd="true">
+                android:layout_alignParentEnd="true"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
 
             </TextView>
 
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
 

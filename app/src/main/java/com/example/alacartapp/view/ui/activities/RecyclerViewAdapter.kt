@@ -21,10 +21,12 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>
     class ViewHolder (view: View):RecyclerView.ViewHolder(view) {
         val nombreProducto:TextView
         val descripcionProducto:TextView
+        val precioProducto:TextView
 
         init {
             nombreProducto = view.findViewById(R.id.tvProductName)
             descripcionProducto = view.findViewById(R.id.tvProductDescription)
+            precioProducto = view.findViewById(R.id.tvProductPrice)
         }
     }
 
@@ -36,6 +38,7 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.nombreProducto.text  = productos[position].nombreProducto
         holder.descripcionProducto.text  = productos[position].descripcionProducto
+        holder.precioProducto.text = productos[position].precioProducto
     }
 
     override fun getItemCount() = productos.size

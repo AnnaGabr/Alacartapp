@@ -92,44 +92,23 @@ class HamburguersFragment : Fragment() {
         var productsModels : MutableList<ProductsModel> = ArrayList()
         productsModels.add(
             ProductsModel("La Todo Terreno", "Haburguesa con 125g de carne de res" +
-                "+huevo+pan de papa + Gaseosa + Papas")
+                "+huevo+pan de papa + Gaseosa + Papas", "11000")
         )
         productsModels.add(
             ProductsModel("Cuarto de libra", "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas" +
                 "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas" +
-                "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas   ")
+                "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas   ", "22.000$")
         )
-        productsModels.add(ProductsModel("Wrapper", "Haburguesa con 50g de carne de pavo+huevo+pan de papa+ Gaseosa + Papas"))
+        productsModels.add(ProductsModel("Wrapper", "Haburguesa con 50g de carne de pavo+huevo+pan de papa+ Gaseosa + Papas","80900&"))
         productsModels.add(
             ProductsModel("La Todo Terreno", "Haburguesa con 125g de carne de res" +
-                "+huevo+pan de papa + Gaseosa + Papas")
+                "+huevo+pan de papa + Gaseosa + Papas","$55.000")
         )
         productsModels.add(
             ProductsModel("Cuarto de libra", "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas" +
                 "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas" +
-                "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas   ")
+                "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas   ","1234.543")
         )
-        productsModels.add(ProductsModel("Wrapper", "Haburguesa con 50g de carne de pavo+huevo+pan de papa+ Gaseosa + Papas"))
-        productsModels.add(
-            ProductsModel("La Todo Terreno", "Haburguesa con 125g de carne de res" +
-                "+huevo+pan de papa + Gaseosa + Papas")
-        )
-        productsModels.add(
-            ProductsModel("Cuarto de libra", "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas" +
-                "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas" +
-                "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas   ")
-        )
-        productsModels.add(ProductsModel("Wrapper", "Haburguesa con 50g de carne de pavo+huevo+pan de papa+ Gaseosa + Papas"))
-        productsModels.add(
-            ProductsModel("La Todo Terreno", "Haburguesa con 125g de carne de res" +
-                "+huevo+pan de papa + Gaseosa + Papas")
-        )
-        productsModels.add(
-            ProductsModel("Cuarto de libra", "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas" +
-                "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas" +
-                "Haburguesa con 500g de carne de Cerdo+huevo+pan de papa+ Gaseosa + Papas   ")
-        )
-        productsModels.add(ProductsModel("Wrapper", "Haburguesa con 50g de carne de pavo+huevo+pan de papa+ Gaseosa + Papas"))
         return productsModels
     }
 
