@@ -42,7 +42,7 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>
         holder.nombreProducto.text  = productos[position].nombreProducto
         holder.descripcionProducto.text  = productos[position].descripcionProducto
         holder.precioProducto.text = productos[position].precioProducto
-        holder.imagenProducto.setImageResource(position)
+        holder.imagenProducto.setImageResource(productos[position].imagenProducto)
     }
 
     override fun getItemCount() = productos.size
