@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "393130686179",
+    "project_id": "alacartapp-mintic",
+    "storage_bucket": "alacartapp-mintic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393130686179:android:62ae809e0a61cb073937d6",
+        "android_client_info": {
+          "package_name": "com.example.alacartapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "393130686179-7dhbugd3u0pv2ii526kp87u0aq9ip597.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALPHljYvl5KIbftKwSkceyjdJ03aDbBkc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "393130686179-7dhbugd3u0pv2ii526kp87u0aq9ip597.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
