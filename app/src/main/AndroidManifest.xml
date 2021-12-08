@@ -13,6 +13,9 @@
             android:name=".view.ui.activities.LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".view.ui.activities.RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.ui.activities.Waiter"
             android:exported="false" />
         <activity
