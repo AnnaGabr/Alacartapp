@@ -26,15 +26,21 @@ class RegisterActivity : AppCompatActivity() {
         val email=editTextEmailAddress.text.toString()
         val password=editTextPassword.text.toString()
 
-        auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener { task ->
-            if(task.isSuccessful){
-                val intent= Intent(this,MainActivity::class.java)
-                startActivity(intent)
-                finish()
+        buttonRegister.setOnClickListener{
+            if (editTextEmailAddress.text.isNotEmpty() && editTextPassword.text.isNotEmpty()){
+                auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener { task ->
+                    if(task.isSuccessful){
+                        val intent= Intent(this,MainActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
+                }.addOnFailureListener { exception ->
+                    Toast.makeText(applicationContext,exception.localizedMessage,Toast.LENGTH_LONG).show()
+                }
             }
-        }.addOnFailureListener { exception ->
-            Toast.makeText(applicationContext,exception.localizedMessage,Toast.LENGTH_LONG).show()
+
         }
+
     }
     ///---If the user already has an account, we redirect her to the login screen---///
     fun goToLogin(view: View){
