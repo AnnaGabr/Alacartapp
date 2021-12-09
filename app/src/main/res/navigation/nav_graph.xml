@@ -27,5 +27,5 @@
         android:id="@+id/waiter_login"
         android:name="com.example.alacartapp.view.ui.fragments.Waiter_login"
         android:label="fragment_waiter_login"
-        tools:layout="@layout/fragment_waiter_login" />
+        tools:layout="@layout/fragment_waiter" />
 </navigation>

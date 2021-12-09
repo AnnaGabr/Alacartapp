@@ -35,7 +35,7 @@ class Waiter_login : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_waiter_login, container, false)
+        return inflater.inflate(R.layout.fragment_waiter, container, false)
     }
 
     companion object {

@@ -9,11 +9,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.alacartapp.R
-import com.example.alacartapp.view.ui.activities.ProductsModel
-import com.example.alacartapp.view.ui.activities.RecyclerViewAdapter
+import com.example.alacartapp.models.ProductsModel
+import com.example.alacartapp.adapters.RecyclerViewAdapter
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.fragment_bebidas.*
-import kotlinx.android.synthetic.main.fragment_hamburguers.*
 import kotlinx.android.synthetic.main.fragment_pizza.*
 
 // TODO: Rename parameter arguments, choose names that match

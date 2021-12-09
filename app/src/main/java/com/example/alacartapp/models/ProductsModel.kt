@@ -1,4 +1,4 @@
-package com.example.alacartapp.view.ui.activities
+package com.example.alacartapp.models
 
 import android.graphics.drawable.Drawable
 
