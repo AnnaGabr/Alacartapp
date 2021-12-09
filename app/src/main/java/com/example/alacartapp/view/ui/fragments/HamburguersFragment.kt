@@ -1,6 +1,7 @@
 package com.example.alacartapp.view.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.alacartapp.R
 import com.example.alacartapp.view.ui.activities.ProductsModel
 import com.example.alacartapp.view.ui.activities.RecyclerViewAdapter
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_bebidas.*
 import kotlinx.android.synthetic.main.fragment_hamburguers.*
@@ -21,17 +23,11 @@ private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 class HamburguersFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var db : FirebaseFirestore
+    private lateinit var hamburguesasRecyclerView : RecyclerView
+    private lateinit var hamburgesaArrayList : ArrayList<ProductsModel>
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,20 +56,34 @@ class HamburguersFragment : Fragment() {
         }
 
         //// --------- Recycler View Implementation -----------////
-        val recycler : RecyclerView = requireActivity().findViewById(R.id.rvMainActivity)
-        val adapter : RecyclerViewAdapter = RecyclerViewAdapter()
+        hamburguesasRecyclerView = requireActivity().findViewById(R.id.rvMainActivity)
+        hamburguesasRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        hamburguesasRecyclerView.setHasFixedSize(true)
+
+        hamburgesaArrayList = arrayListOf<ProductsModel>()
+        getHamburguesaData()
 
 
-        //Configuracón del Adapter
-        adapter.RecyclerViewAdapter(products(), context = requireContext())
+    }
 
-        // Configuración del recycler View
-        recycler.hasFixedSize()
-        recycler.layoutManager = LinearLayoutManager(requireContext())
-        recycler.adapter = adapter
-        //// --------- End of Recycler View Implementation -----------////
+    private fun getHamburguesaData() {
+        db = FirebaseFirestore.getInstance()
+        val docRef = db.collection("hamburguesas")
+        docRef.get().addOnCompleteListener{ task ->
+            if (task.isSuccessful){
+                val doc = task.result
+                if (doc != null) {
+                    for (bs in doc){
+                        val hamburguesa = ProductsModel(bs.get("imagen").toString(),bs.get("nombre").toString(), bs.get("descripcion").toString(),bs.get("precio").toString())
+                        Log.d("MYTAG", "se encontro hamburguesa" +bs.get("nombre").toString())
+                        hamburgesaArrayList.add(hamburguesa)
 
+                    }
+                    hamburguesasRecyclerView.adapter =  RecyclerViewAdapter(hamburgesaArrayList)
+                }
+            }
 
+        }
     }
 
     companion object {
@@ -88,35 +98,5 @@ class HamburguersFragment : Fragment() {
                 }
             }
     }
-
-    //// --------- Hardcode Products Info -----------////
-    private fun products(): MutableList<ProductsModel>{
-        var productsModels : MutableList<ProductsModel> = ArrayList()
-        productsModels.add(
-            ProductsModel(R.drawable.whopperveggie,"WHOPPER® Veggie", "Los ingredientes principales son soya," +
-                    " trigo, aceite vegetal y hierbas. Además, contiene 0% colesterol y en comparación a una Whopper® original," +
-                    " contiene 30% menos calorías y 40% menos grasa.\n", "$ 18.900")
-        )
-
-        productsModels.add(
-            ProductsModel(R.drawable.steakhouseking,"Steakhouse King",
-                "Cuenta con dos deliciosas carnes de res a la parrilla , tocino crujiente, deliciosa salsa BBQ y cebollitas crispy.",
-                "$ 27.900")
-        )
-
-        productsModels.add(
-            ProductsModel(R.drawable.hamburguesadoblequesoytocineta,"Hamburguesa Doble, Queso y Tocineta",
-                "Hamburguesa con dos carnes a la parrilla, tocino ahumado con una capa de queso americano derretido, pepinillos frescos, ketchup sobre un pan crujiente con ajonjolí.",
-                "$ 17.900")
-        )
-
-        productsModels.add(
-            ProductsModel(R.drawable.hamburguesaxtbbqpng,"XT® BBQ",
-                "Cuenta con una carne de res a la parrilla de 198 gr, queso, lechuga, tomates, cebolla crujiente, salsa BBQ y cremosa mayonesa sobre un pan esponjoso de maíz.",
-                "$ 32.900")
-        )
-        return productsModels
-    }
-    //// --------- End of Hardcode Products Info -----------////
 
 }

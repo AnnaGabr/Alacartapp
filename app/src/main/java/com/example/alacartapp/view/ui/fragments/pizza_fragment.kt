@@ -1,6 +1,7 @@
 package com.example.alacartapp.view.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.alacartapp.R
 import com.example.alacartapp.view.ui.activities.ProductsModel
 import com.example.alacartapp.view.ui.activities.RecyclerViewAdapter
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_bebidas.*
 import kotlinx.android.synthetic.main.fragment_hamburguers.*
 import kotlinx.android.synthetic.main.fragment_pizza.*
@@ -26,16 +28,10 @@ private const val ARG_PARAM2 = "param2"
  */
 class pizza_fragmet : Fragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var db : FirebaseFirestore
+    private lateinit var pizzasRecyclerView : RecyclerView
+    private lateinit var pizzaArrayList : ArrayList<ProductsModel>
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,19 +59,33 @@ class pizza_fragmet : Fragment() {
         }
 
         //// --------- Recycler View Implementation -----------////
-        val recycler : RecyclerView = requireActivity().findViewById(R.id.rvMainActivity)
-        val adapter : RecyclerViewAdapter = RecyclerViewAdapter()
+        pizzasRecyclerView = requireActivity().findViewById(R.id.rvMainActivity)
+        pizzasRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        pizzasRecyclerView.setHasFixedSize(true)
 
+        pizzaArrayList = arrayListOf<ProductsModel>()
+        getPizzaData()
 
-        //Configuracón del Adapter
-        adapter.RecyclerViewAdapter(products(), context = requireContext())
+    }
 
-        // Configuración del recycler View
-        recycler.hasFixedSize()
-        recycler.layoutManager = LinearLayoutManager(requireContext())
-        recycler.adapter = adapter
-        //// --------- End of Recycler View Implementation -----------////
+    private fun getPizzaData() {
+        db = FirebaseFirestore.getInstance()
+        val docRef = db.collection("pizzas")
+        docRef.get().addOnCompleteListener{ task ->
+            if (task.isSuccessful){
+                val doc = task.result
+                if (doc != null) {
+                    for (bs in doc){
+                        val pizza = ProductsModel(bs.get("imagen").toString(),bs.get("nombre").toString(), bs.get("descripcion").toString(),bs.get("precio").toString())
+                        Log.d("MYTAG", "se encontro pizza" +bs.get("nombre").toString())
+                        pizzaArrayList.add(pizza)
 
+                    }
+                    pizzasRecyclerView.adapter =  RecyclerViewAdapter(pizzaArrayList)
+                }
+            }
+
+        }
     }
 
 
@@ -98,33 +108,5 @@ class pizza_fragmet : Fragment() {
                 }
             }
     }
-    //// --------- Hardcode Products Info -----------////
-    private fun products(): MutableList<ProductsModel>{
-        var productsModels : MutableList<ProductsModel> = ArrayList()
-        productsModels.add(
-            ProductsModel(R.drawable.whopperveggie,"Pizza 1", "Los ingredientes principales son soya," +
-                    " trigo, aceite vegetal y hierbas. Además, contiene 0% colesterol y en comparación a una Whopper® original," +
-                    " contiene 30% menos calorías y 40% menos grasa.\n", "$ 18.900")
-        )
 
-        productsModels.add(
-            ProductsModel(R.drawable.steakhouseking,"Pizza 2",
-                "Cuenta con dos deliciosas carnes de res a la parrilla , tocino crujiente, deliciosa salsa BBQ y cebollitas crispy.",
-                "$ 27.900")
-        )
-
-        productsModels.add(
-            ProductsModel(R.drawable.hamburguesadoblequesoytocineta,"Pizza 3",
-                "Hamburguesa con dos carnes a la parrilla, tocino ahumado con una capa de queso americano derretido, pepinillos frescos, ketchup sobre un pan crujiente con ajonjolí.",
-                "$ 17.900")
-        )
-
-        productsModels.add(
-            ProductsModel(R.drawable.hamburguesaxtbbqpng,"XT® BBQ",
-                "Cuenta con una carne de res a la parrilla de 198 gr, queso, lechuga, tomates, cebolla crujiente, salsa BBQ y cremosa mayonesa sobre un pan esponjoso de maíz.",
-                "$ 32.900")
-        )
-        return productsModels
-    }
-    //// --------- End of Hardcode Products Info -----------////
 }

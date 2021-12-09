@@ -10,9 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.alacartapp.R
 import com.example.alacartapp.view.ui.activities.ProductsModel
 import com.example.alacartapp.view.ui.activities.RecyclerViewAdapter
+import com.google.firebase.database.*
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_bebidas.*
 import kotlinx.android.synthetic.main.fragment_hamburguers.*
-
+import android.util.Log
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
@@ -24,17 +26,12 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class bebidas_fragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    //private lateinit var dbref : DatabaseReference
+    private lateinit var db : FirebaseFirestore
+    private lateinit var bebidasRecyclerView : RecyclerView
+    private lateinit var bebidaArrayList : ArrayList<ProductsModel>
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,18 +58,54 @@ class bebidas_fragment : Fragment() {
             transaction.replace(R.id.fragmentContent, Pedido()).commit()
         }
         //// --------- Recycler View Implementation -----------////
-        val recycler : RecyclerView = requireActivity().findViewById(R.id.rvMainActivity)
-        val adapter : RecyclerViewAdapter = RecyclerViewAdapter()
+        bebidasRecyclerView = requireActivity().findViewById(R.id.rvMainActivity)
+        bebidasRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        bebidasRecyclerView.setHasFixedSize(true)
+
+        bebidaArrayList = arrayListOf<ProductsModel>()
+        getBebidaData()
+
+    }
+
+    private fun getBebidaData() {
+        /*dbref = FirebaseDatabase.getInstance().getReference("bebidas")
+        dbref.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()){
+                    for (bebidaSnaphot in snapshot.children){
+                        val bebida = bebidaSnaphot.getValue(ProductsModel::class.java)
+                        bebidaArrayList.add(bebida!!)
+                    }
+                }
+                bebidasRecyclerView.adapter =  RecyclerViewAdapter(bebidaArrayList)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
 
 
-        //Configuracón del Adapter
-        adapter.RecyclerViewAdapter(products(), context = requireContext())
+        })*/
+        db = FirebaseFirestore.getInstance()
+        val docRef = db.collection("bebidas")
+        docRef.get().addOnCompleteListener{ task ->
+            if (task.isSuccessful){
+                val doc = task.result
+                if (doc != null) {
+                    for (bs in doc){
+                        val bebida = ProductsModel(bs.get("imagen").toString(),bs.get("nombre").toString(), bs.get("descripcion").toString(),bs.get("precio").toString())
+                        Log.d("MYTAG", "se encontro bebida" +bs.get("nombre").toString())
+                        bebidaArrayList.add(bebida)
 
-        // Configuración del recycler View
-        recycler.hasFixedSize()
-        recycler.layoutManager = LinearLayoutManager(requireContext())
-        recycler.adapter = adapter
-        //// --------- End of Recycler View Implementation -----------////
+                    }
+                    bebidasRecyclerView.adapter =  RecyclerViewAdapter(bebidaArrayList)
+                }
+            }
+
+        }
+
+
+
     }
 
 
@@ -96,35 +129,5 @@ class bebidas_fragment : Fragment() {
             }
     }
 
-    //// --------- Hardcode Products Info -----------////
-    private fun products(): MutableList<ProductsModel>{
-        var productsModels : MutableList<ProductsModel> = ArrayList()
-        productsModels.add(
-            ProductsModel(R.drawable.whopperveggie,"Bebida 1",
-                "Los ingredientes principales son soya," +
-                    " trigo, aceite vegetal y hierbas. Además, contiene 0% colesterol y en comparación a una Whopper® original," +
-                    " contiene 30% menos calorías y 40% menos grasa.\n", "$ 18.900")
-        )
-
-        productsModels.add(
-            ProductsModel(R.drawable.steakhouseking,"Bebida 2",
-                "Cuenta con dos deliciosas carnes de res a la parrilla , tocino crujiente, deliciosa salsa BBQ y cebollitas crispy.",
-                "$ 27.900")
-        )
-
-        productsModels.add(
-            ProductsModel(R.drawable.hamburguesadoblequesoytocineta,"Bebida 3",
-                "Hamburguesa con dos carnes a la parrilla, tocino ahumado con una capa de queso americano derretido, pepinillos frescos, ketchup sobre un pan crujiente con ajonjolí.",
-                "$ 17.900")
-        )
-
-        productsModels.add(
-            ProductsModel(R.drawable.hamburguesaxtbbqpng,"Bebida 4",
-                "Cuenta con una carne de res a la parrilla de 198 gr, queso, lechuga, tomates, cebolla crujiente, salsa BBQ y cremosa mayonesa sobre un pan esponjoso de maíz.",
-                "$ 32.900")
-        )
-        return productsModels
-    }
-    //// --------- End of Hardcode Products Info -----------////
 
 }

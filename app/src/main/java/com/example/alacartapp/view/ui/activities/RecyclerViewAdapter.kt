@@ -8,42 +8,42 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.alacartapp.R
+import com.squareup.picasso.Picasso
 
-class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+class RecyclerViewAdapter(private val productList : ArrayList<ProductsModel>) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
 
-    var productos : MutableList<ProductsModel> = ArrayList()
-    lateinit var context :Context
 
-    fun RecyclerViewAdapter(productos:MutableList<ProductsModel>,context:Context){
-        this.productos = productos
-        this.context = context
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.products_card_view_layout,parent,false)
+        return ViewHolder(itemView)
     }
 
-    class ViewHolder (view: View):RecyclerView.ViewHolder(view) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
+        val currentView = productList[position]
+
+        holder.nombreProducto.text  = currentView.nombre
+        holder.descripcionProducto.text  = currentView.descripcion
+        holder.precioProducto.text = currentView.precio
+        Picasso.get().load(currentView.imagen).into(holder.imagenProducto)
+    }
+
+    override fun getItemCount(): Int{
+        return productList.size
+    }
+
+    class ViewHolder (itemview: View):RecyclerView.ViewHolder(itemview) {
+
         val nombreProducto:TextView
         val descripcionProducto:TextView
         val precioProducto:TextView
         val imagenProducto: ImageView
 
         init {
-            nombreProducto = view.findViewById(R.id.tvProductName)
-            descripcionProducto = view.findViewById(R.id.tvProductDescription)
-            precioProducto = view.findViewById(R.id.tvProductPrice)
-            imagenProducto = view.findViewById(R.id.iv_Products)
+            nombreProducto = itemview.findViewById(R.id.tvProductName)
+            descripcionProducto = itemview.findViewById(R.id.tvProductDescription)
+            precioProducto = itemview.findViewById(R.id.tvProductPrice)
+            imagenProducto = itemview.findViewById(R.id.iv_Products)
         }
     }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.products_card_view_layout,parent,false)
-        return ViewHolder(view)
-    }
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.nombreProducto.text  = productos[position].nombreProducto
-        holder.descripcionProducto.text  = productos[position].descripcionProducto
-        holder.precioProducto.text = productos[position].precioProducto
-        holder.imagenProducto.setImageResource(productos[position].imagenProducto)
-    }
-
-    override fun getItemCount() = productos.size
 }

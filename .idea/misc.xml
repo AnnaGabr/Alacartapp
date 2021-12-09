@@ -17,6 +17,11 @@
         <entry key="..\:/Users/ejehe/Documents/P49-Mintic/ProjectCode/Alacartapp/app/src/main/res/layout/fragment_hamburguers.xml" value="0.2" />
         <entry key="..\:/Users/ejehe/Documents/P49-Mintic/ProjectCode/Alacartapp/app/src/main/res/layout/fragment_pizza.xml" value="0.1" />
         <entry key="..\:/Users/ejehe/Documents/P49-Mintic/ProjectCode/Alacartapp/app/src/main/res/layout/products_card_view_layout.xml" value="0.536" />
+        <entry key="app/src/main/res/layout/activity_menu.xml" value="0.333786231884058" />
+        <entry key="app/src/main/res/layout/activity_waiter.xml" value="0.35833333333333334" />
+        <entry key="app/src/main/res/layout/fragment_bebidas.xml" value="0.333786231884058" />
+        <entry key="app/src/main/res/layout/fragment_menu.xml" value="0.333786231884058" />
+        <entry key="app/src/main/res/layout/products_card_view_layout.xml" value="0.35833333333333334" />
       </map>
     </option>
   </component>
