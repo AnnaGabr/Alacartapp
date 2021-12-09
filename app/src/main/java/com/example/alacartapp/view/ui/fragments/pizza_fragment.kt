@@ -102,28 +102,26 @@ class pizza_fragmet : Fragment() {
     private fun products(): MutableList<ProductsModel>{
         var productsModels : MutableList<ProductsModel> = ArrayList()
         productsModels.add(
-            ProductsModel(R.drawable.whopperveggie,"Pizza 1", "Los ingredientes principales son soya," +
-                    " trigo, aceite vegetal y hierbas. Además, contiene 0% colesterol y en comparación a una Whopper® original," +
-                    " contiene 30% menos calorías y 40% menos grasa.\n", "$ 18.900")
+            ProductsModel(R.drawable.pizza_pollo,"Pizza 1",
+                "pizza con pollo, pollo con pizza," +
+                    " una combinación simple, segura y exquisita, pero si a esta pizza le sumamos la deliciosa salsa BBQ" +
+                    " hecha en casa, también te comerás tus dedos.\n",
+                "$ 24.900")
         )
 
         productsModels.add(
-            ProductsModel(R.drawable.steakhouseking,"Pizza 2",
-                "Cuenta con dos deliciosas carnes de res a la parrilla , tocino crujiente, deliciosa salsa BBQ y cebollitas crispy.",
-                "$ 27.900")
+            ProductsModel(R.drawable.pizza_hawaiana,"Pizza 2",
+                "Llegó la hora de la polémica, amada por unos, odiada por otros... lo importante es que si pruebas nuestra pizza hawaiana, solo te quedará la opción de amarla.",
+                "$ 22.900")
         )
 
         productsModels.add(
-            ProductsModel(R.drawable.hamburguesadoblequesoytocineta,"Pizza 3",
-                "Hamburguesa con dos carnes a la parrilla, tocino ahumado con una capa de queso americano derretido, pepinillos frescos, ketchup sobre un pan crujiente con ajonjolí.",
-                "$ 17.900")
+            ProductsModel(R.drawable.pizza_vegetariana,"Pizza 3",
+                "Tal vez la pizza mas saludable que probarás nunca, hecha con ingredientes seleccionados que cautivarán tu paladar y te harán devorar las 8 porciones.",
+                "$ 25.900")
         )
 
-        productsModels.add(
-            ProductsModel(R.drawable.hamburguesaxtbbqpng,"XT® BBQ",
-                "Cuenta con una carne de res a la parrilla de 198 gr, queso, lechuga, tomates, cebolla crujiente, salsa BBQ y cremosa mayonesa sobre un pan esponjoso de maíz.",
-                "$ 32.900")
-        )
+
         return productsModels
     }
     //// --------- End of Hardcode Products Info -----------////

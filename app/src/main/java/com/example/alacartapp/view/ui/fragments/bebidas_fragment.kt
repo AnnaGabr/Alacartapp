@@ -100,29 +100,25 @@ class bebidas_fragment : Fragment() {
     private fun products(): MutableList<ProductsModel>{
         var productsModels : MutableList<ProductsModel> = ArrayList()
         productsModels.add(
-            ProductsModel(R.drawable.whopperveggie,"Bebida 1",
-                "Los ingredientes principales son soya," +
-                    " trigo, aceite vegetal y hierbas. Además, contiene 0% colesterol y en comparación a una Whopper® original," +
-                    " contiene 30% menos calorías y 40% menos grasa.\n", "$ 18.900")
+            ProductsModel(R.drawable.limonada,"Bebida 1",
+                "Totalmente natural, con limones traídos de la mejor tierra calida," +
+                    " disfrutarás del mejor sabor acido que has sentido en la vida, además, es de las mejores opciones para refrescarte" +
+                    " y lo mejor de todo, saludablemente.\n", "$ 9.900")
         )
 
         productsModels.add(
-            ProductsModel(R.drawable.steakhouseking,"Bebida 2",
-                "Cuenta con dos deliciosas carnes de res a la parrilla , tocino crujiente, deliciosa salsa BBQ y cebollitas crispy.",
-                "$ 27.900")
+            ProductsModel(R.drawable.jugo_natural,"Bebida 2",
+                "Puedes elegir la fruta que desees, tambien si quieres este jugo en leche o agua, tenemos una gran variedad para satisfacer a todos nuestros clientes.",
+                "$ 12.900")
         )
 
         productsModels.add(
-            ProductsModel(R.drawable.hamburguesadoblequesoytocineta,"Bebida 3",
-                "Hamburguesa con dos carnes a la parrilla, tocino ahumado con una capa de queso americano derretido, pepinillos frescos, ketchup sobre un pan crujiente con ajonjolí.",
-                "$ 17.900")
+            ProductsModel(R.drawable.gaseosa,"Bebida 3",
+                " De la marca y sabor que desees, tenemos todas las gaseosas disponibles para tu disfrute, en excelente acompañamiento para nuestras comidas.",
+                "$ 14.900")
         )
 
-        productsModels.add(
-            ProductsModel(R.drawable.hamburguesaxtbbqpng,"Bebida 4",
-                "Cuenta con una carne de res a la parrilla de 198 gr, queso, lechuga, tomates, cebolla crujiente, salsa BBQ y cremosa mayonesa sobre un pan esponjoso de maíz.",
-                "$ 32.900")
-        )
+
         return productsModels
     }
     //// --------- End of Hardcode Products Info -----------////
