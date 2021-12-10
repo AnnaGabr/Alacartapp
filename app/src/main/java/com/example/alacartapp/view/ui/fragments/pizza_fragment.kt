@@ -1,5 +1,6 @@
 package com.example.alacartapp.view.ui.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.alacartapp.R
 import com.example.alacartapp.models.ProductsModel
 import com.example.alacartapp.adapters.RecyclerViewAdapter
+import com.example.alacartapp.view.ui.shouldImplement
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_pizza.*
 
@@ -31,6 +33,7 @@ class pizza_fragmet : Fragment() {
     private lateinit var db : FirebaseFirestore
     private lateinit var pizzasRecyclerView : RecyclerView
     private lateinit var pizzaArrayList : ArrayList<ProductsModel>
+    private var pizzaListener: PizzaListener? =  null
 
 
     override fun onCreateView(
@@ -92,12 +95,24 @@ class pizza_fragmet : Fragment() {
                             var itemSelected = pizzaArrayList[position]
                             Toast.makeText(activity, "Se agrego al carrito ${itemSelected.nombre}",
                                 Toast.LENGTH_SHORT).show()
+                            pizzaListener?.onPizzaSelect(itemSelected)
                         }
                     })
                 }
             }
 
         }
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        pizzaListener = null
+
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        pizzaListener = context.shouldImplement(bebidas_fragment.BebidasListener::class.java)
     }
 
 
@@ -119,6 +134,11 @@ class pizza_fragmet : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    interface PizzaListener {
+        fun onPizzaSelect(pizza: ProductsModel)
+
     }
 
 }

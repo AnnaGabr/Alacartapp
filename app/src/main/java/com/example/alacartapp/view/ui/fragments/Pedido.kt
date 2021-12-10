@@ -63,7 +63,7 @@ class Pedido : Fragment() {
         newadapter.onItemClickListener(object : RecyclerViewAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
                 var itemSelected = carrito[position]
-                Toast.makeText(activity, "${itemSelected.nombre}",
+                Toast.makeText(activity, "${itemSelected.nombre} vale ${itemSelected.precio}",
                     Toast.LENGTH_SHORT).show()
             }
         })

@@ -1,5 +1,6 @@
 package com.example.alacartapp.view.ui.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.alacartapp.R
 import com.example.alacartapp.models.ProductsModel
 import com.example.alacartapp.adapters.RecyclerViewAdapter
+import com.example.alacartapp.view.ui.shouldImplement
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_hamburguers.*
 
@@ -25,6 +27,7 @@ class HamburguersFragment : Fragment() {
     private lateinit var db : FirebaseFirestore
     private lateinit var hamburguesasRecyclerView : RecyclerView
     private lateinit var hamburgesaArrayList : ArrayList<ProductsModel>
+    private var hamburguesaListener: HamburguesaListener? =  null
 
 
     override fun onCreateView(
@@ -88,12 +91,24 @@ class HamburguersFragment : Fragment() {
                             var itemSelected = hamburgesaArrayList[position]
                             Toast.makeText(activity, "Se agregó al carrito ${itemSelected.nombre}",
                                 Toast.LENGTH_SHORT).show()
+                            hamburguesaListener?.onHamburguesaSelect(itemSelected)
                         }
                     })
                 }
             }
 
         }
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        hamburguesaListener = null
+
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        hamburguesaListener = context.shouldImplement(bebidas_fragment.BebidasListener::class.java)
     }
 
     companion object {
@@ -107,6 +122,11 @@ class HamburguersFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    interface HamburguesaListener {
+        fun onHamburguesaSelect(hamburguesa: ProductsModel)
+
     }
 
 }

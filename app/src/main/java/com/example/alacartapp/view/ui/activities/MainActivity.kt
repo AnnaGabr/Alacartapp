@@ -17,7 +17,8 @@ import kotlinx.android.synthetic.main.fragment_hamburguers.*
 import kotlinx.android.synthetic.main.fragment_menu.*
 import kotlinx.android.synthetic.main.fragment_pizza.*
 
-class MainActivity : AppCompatActivity(), bebidas_fragment.BebidasListener {
+class MainActivity : AppCompatActivity(), bebidas_fragment.BebidasListener,
+    HamburguersFragment.HamburguesaListener, pizza_fragmet.PizzaListener {
 
     private lateinit var binding: ActivityMainBinding
     var carrito: MutableList<ProductsModel> = mutableListOf()
@@ -58,6 +59,14 @@ class MainActivity : AppCompatActivity(), bebidas_fragment.BebidasListener {
 
     override fun onBebidasSelect(bebida: ProductsModel) {
         carrito.add(bebida)
+    }
+
+    override fun onHamburguesaSelect(hamburguesa: ProductsModel) {
+        carrito.add(hamburguesa)
+    }
+
+    override fun onPizzaSelect(pizza: ProductsModel) {
+        carrito.add(pizza)
     }
 
 
