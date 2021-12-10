@@ -51,6 +51,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        fun agregarCarrito(item: ProductsModel){
+            carrito.add(item)
+        }
+
         //override fun onItemClick(product: ProductsModel) {
         //    carrito.add(product)
         //}

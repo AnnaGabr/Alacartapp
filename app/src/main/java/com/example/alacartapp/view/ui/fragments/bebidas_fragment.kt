@@ -14,6 +14,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_bebidas.*
 import android.util.Log
 import android.widget.Toast
+import com.example.alacartapp.view.ui.activities.MainActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -102,6 +103,7 @@ class bebidas_fragment : Fragment() {
                         bebidaArrayList.add(bebida)
 
                     }
+
                     var newadapter = RecyclerViewAdapter(bebidaArrayList)
                     bebidasRecyclerView.adapter = newadapter
                     newadapter.onItemClickListener(object : RecyclerViewAdapter.onItemClickListener{
@@ -109,7 +111,7 @@ class bebidas_fragment : Fragment() {
                             var itemSelected = bebidaArrayList[position]
                             Toast.makeText(activity, "Se agregó al carrito ${itemSelected.nombre}",
                                 Toast.LENGTH_SHORT).show()
-                            //requireActivity().carrito
+                            carritoBebidas.add(itemSelected)
                         }
                     })
                 }
@@ -117,6 +119,11 @@ class bebidas_fragment : Fragment() {
 
         }
 
+
+    }
+
+    override fun onDetach() {
+        super.onDetach()
 
     }
 
