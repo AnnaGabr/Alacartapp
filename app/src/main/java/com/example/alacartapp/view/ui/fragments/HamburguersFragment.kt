@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.alacartapp.R
@@ -71,12 +72,24 @@ class HamburguersFragment : Fragment() {
                 val doc = task.result
                 if (doc != null) {
                     for (bs in doc){
-                        val hamburguesa = ProductsModel(bs.get("imagen").toString(),bs.get("nombre").toString(), bs.get("descripcion").toString(),bs.get("precio").toString())
+                        val hamburguesa = ProductsModel(bs.reference.id,
+                            bs.get("imagen").toString(),
+                            bs.get("nombre").toString(),
+                            bs.get("descripcion").toString(),
+                            bs.get("precio").toString())
                         Log.d("MYTAG", "se encontro hamburguesa" +bs.get("nombre").toString())
                         hamburgesaArrayList.add(hamburguesa)
 
                     }
-                    hamburguesasRecyclerView.adapter =  RecyclerViewAdapter(hamburgesaArrayList)
+                    var newadapter = RecyclerViewAdapter(hamburgesaArrayList)
+                    hamburguesasRecyclerView.adapter =  newadapter
+                    newadapter.onItemClickListener(object: RecyclerViewAdapter.onItemClickListener{
+                        override fun onItemClick(position: Int) {
+                            var itemSelected = hamburgesaArrayList[position]
+                            Toast.makeText(activity, "Se agregó al carrito ${itemSelected.nombre}",
+                                Toast.LENGTH_SHORT).show()
+                        }
+                    })
                 }
             }
 

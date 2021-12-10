@@ -12,10 +12,19 @@ import com.squareup.picasso.Picasso
 
 class RecyclerViewAdapter(private val productList : ArrayList<ProductsModel>) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
 
+    private lateinit var mListener: onItemClickListener
+
+    interface onItemClickListener{
+        fun onItemClick(position: Int)
+    }
+
+    fun onItemClickListener(listener: onItemClickListener){
+        mListener = listener
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.products_card_view_layout,parent,false)
-        return ViewHolder(itemView)
+        return ViewHolder(itemView, mListener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -32,7 +41,7 @@ class RecyclerViewAdapter(private val productList : ArrayList<ProductsModel>) : 
         return productList.size
     }
 
-    class ViewHolder (itemview: View):RecyclerView.ViewHolder(itemview) {
+    class ViewHolder (itemview: View, listener: onItemClickListener):RecyclerView.ViewHolder(itemview) {
 
         val nombreProducto:TextView
         val descripcionProducto:TextView
@@ -44,6 +53,10 @@ class RecyclerViewAdapter(private val productList : ArrayList<ProductsModel>) : 
             descripcionProducto = itemview.findViewById(R.id.tvProductDescription)
             precioProducto = itemview.findViewById(R.id.tvProductPrice)
             imagenProducto = itemview.findViewById(R.id.iv_Products)
+
+            itemview.setOnClickListener {
+                listener.onItemClick(adapterPosition)
+            }
         }
     }
 }

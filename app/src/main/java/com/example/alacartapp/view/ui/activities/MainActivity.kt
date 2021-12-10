@@ -9,6 +9,7 @@ import com.example.alacartapp.databinding.ActivityMainBinding
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.alacartapp.models.ProductsModel
 import com.example.alacartapp.view.ui.fragments.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_bebidas.*
@@ -19,6 +20,7 @@ import kotlinx.android.synthetic.main.fragment_pizza.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    public var carrito: MutableList<ProductsModel> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,21 +32,28 @@ class MainActivity : AppCompatActivity() {
         binding.bnavMenu?.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navMenu -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.fragmentContent, MenuFragment()).commit()
+                    supportFragmentManager.beginTransaction().replace(R.id.fragmentContent,
+                        MenuFragment()).commit()
                     true
                 }
 
                 R.id.navOrder -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.fragmentContent, Pedido()).commit()
+                    supportFragmentManager.beginTransaction().replace(R.id.fragmentContent,
+                        Pedido()).commit()
                     true
                 }
 
                 else -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.fragmentContent, Waiter_login()).commit()
+                    supportFragmentManager.beginTransaction().replace(R.id.fragmentContent,
+                        Waiter_login()).commit()
                     true
                 }
             }
         }
+
+        //override fun onItemClick(product: ProductsModel) {
+        //    carrito.add(product)
+        //}
 
 
     }

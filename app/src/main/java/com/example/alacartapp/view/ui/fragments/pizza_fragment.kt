@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewParent
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.alacartapp.R
@@ -74,12 +76,24 @@ class pizza_fragmet : Fragment() {
                 val doc = task.result
                 if (doc != null) {
                     for (bs in doc){
-                        val pizza = ProductsModel(bs.get("imagen").toString(),bs.get("nombre").toString(), bs.get("descripcion").toString(),bs.get("precio").toString())
+                        val pizza = ProductsModel(bs.reference.id,
+                            bs.get("imagen").toString(),
+                            bs.get("nombre").toString(),
+                            bs.get("descripcion").toString(),
+                            bs.get("precio").toString())
                         Log.d("MYTAG", "se encontro pizza" +bs.get("nombre").toString())
                         pizzaArrayList.add(pizza)
 
                     }
-                    pizzasRecyclerView.adapter =  RecyclerViewAdapter(pizzaArrayList)
+                    var newadapter = RecyclerViewAdapter(pizzaArrayList)
+                    pizzasRecyclerView.adapter =  newadapter
+                    newadapter.onItemClickListener(object: RecyclerViewAdapter.onItemClickListener{
+                        override fun onItemClick(position: Int) {
+                            var itemSelected = pizzaArrayList[position]
+                            Toast.makeText(activity, "Se agrego al carrito ${itemSelected.nombre}",
+                                Toast.LENGTH_SHORT).show()
+                        }
+                    })
                 }
             }
 

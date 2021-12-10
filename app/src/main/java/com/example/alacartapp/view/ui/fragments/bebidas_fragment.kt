@@ -13,6 +13,8 @@ import com.example.alacartapp.adapters.RecyclerViewAdapter
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_bebidas.*
 import android.util.Log
+import android.widget.Toast
+
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
@@ -29,7 +31,7 @@ class bebidas_fragment : Fragment() {
     private lateinit var db : FirebaseFirestore
     private lateinit var bebidasRecyclerView : RecyclerView
     private lateinit var bebidaArrayList : ArrayList<ProductsModel>
-
+    public var carritoBebidas: MutableList<ProductsModel> = mutableListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -91,17 +93,29 @@ class bebidas_fragment : Fragment() {
                 val doc = task.result
                 if (doc != null) {
                     for (bs in doc){
-                        val bebida = ProductsModel(bs.get("imagen").toString(),bs.get("nombre").toString(), bs.get("descripcion").toString(),bs.get("precio").toString())
+                        val bebida = ProductsModel(bs.reference.id,
+                            bs.get("imagen").toString(),
+                            bs.get("nombre").toString(),
+                            bs.get("descripcion").toString(),
+                            bs.get("precio").toString())
                         Log.d("MYTAG", "se encontro bebida" +bs.get("nombre").toString())
                         bebidaArrayList.add(bebida)
 
                     }
-                    bebidasRecyclerView.adapter =  RecyclerViewAdapter(bebidaArrayList)
+                    var newadapter = RecyclerViewAdapter(bebidaArrayList)
+                    bebidasRecyclerView.adapter = newadapter
+                    newadapter.onItemClickListener(object : RecyclerViewAdapter.onItemClickListener{
+                        override fun onItemClick(position: Int) {
+                            var itemSelected = bebidaArrayList[position]
+                            Toast.makeText(activity, "Se agregó al carrito ${itemSelected.nombre}",
+                                Toast.LENGTH_SHORT).show()
+                            //requireActivity().carrito
+                        }
+                    })
                 }
             }
 
         }
-
 
 
     }
