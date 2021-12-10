@@ -1,5 +1,6 @@
 package com.example.alacartapp.view.ui.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,6 +16,7 @@ import kotlinx.android.synthetic.main.fragment_bebidas.*
 import android.util.Log
 import android.widget.Toast
 import com.example.alacartapp.view.ui.activities.MainActivity
+import com.example.alacartapp.view.ui.shouldImplement
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,7 +34,7 @@ class bebidas_fragment : Fragment() {
     private lateinit var db : FirebaseFirestore
     private lateinit var bebidasRecyclerView : RecyclerView
     private lateinit var bebidaArrayList : ArrayList<ProductsModel>
-    public var carritoBebidas: MutableList<ProductsModel> = mutableListOf()
+    private var bebidasListener: BebidasListener? =  null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -111,7 +113,7 @@ class bebidas_fragment : Fragment() {
                             var itemSelected = bebidaArrayList[position]
                             Toast.makeText(activity, "Se agregó al carrito ${itemSelected.nombre}",
                                 Toast.LENGTH_SHORT).show()
-                            carritoBebidas.add(itemSelected)
+                            bebidasListener?.onBebidasSelect(itemSelected)
                         }
                     })
                 }
@@ -124,7 +126,13 @@ class bebidas_fragment : Fragment() {
 
     override fun onDetach() {
         super.onDetach()
+        bebidasListener = null
 
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        bebidasListener = context.shouldImplement(bebidas_fragment.BebidasListener::class.java)
     }
 
 
@@ -146,6 +154,11 @@ class bebidas_fragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    interface BebidasListener {
+        fun onBebidasSelect(bebida: ProductsModel)
+
     }
 
 

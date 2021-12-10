@@ -17,10 +17,10 @@ import kotlinx.android.synthetic.main.fragment_hamburguers.*
 import kotlinx.android.synthetic.main.fragment_menu.*
 import kotlinx.android.synthetic.main.fragment_pizza.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), bebidas_fragment.BebidasListener {
 
     private lateinit var binding: ActivityMainBinding
-    public var carrito: MutableList<ProductsModel> = mutableListOf()
+    var carrito: MutableList<ProductsModel> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.navOrder -> {
                     supportFragmentManager.beginTransaction().replace(R.id.fragmentContent,
-                        Pedido()).commit()
+                        Pedido.newInstance(ArrayList(carrito))).commit()
                     true
                 }
 
@@ -51,18 +51,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        fun agregarCarrito(item: ProductsModel){
-            carrito.add(item)
-        }
-
         //override fun onItemClick(product: ProductsModel) {
         //    carrito.add(product)
         //}
-
-
     }
 
-
+    override fun onBebidasSelect(bebida: ProductsModel) {
+        carrito.add(bebida)
+    }
 
 
 }

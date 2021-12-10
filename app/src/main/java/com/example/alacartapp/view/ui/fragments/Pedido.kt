@@ -1,11 +1,17 @@
 package com.example.alacartapp.view.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.alacartapp.R
+import com.example.alacartapp.adapters.RecyclerViewAdapter
+import com.example.alacartapp.models.ProductsModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,12 +28,15 @@ class Pedido : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private lateinit var pedidoRecyclerView : RecyclerView
+    private lateinit var carrito : ArrayList<ProductsModel>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            carrito = it.getParcelableArrayList(ARG_PARAM1)!!
         }
+
     }
 
     override fun onCreateView(
@@ -37,6 +46,29 @@ class Pedido : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_pedido, container, false)
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        pedidoRecyclerView = requireActivity().findViewById(R.id.rvMainActivity)
+        pedidoRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        pedidoRecyclerView.setHasFixedSize(true)
+
+        getPedidoData(carrito)
+    }
+
+    private fun getPedidoData(carrito: ArrayList<ProductsModel>){
+        var newadapter = RecyclerViewAdapter(carrito)
+        pedidoRecyclerView.adapter = newadapter
+        newadapter.onItemClickListener(object : RecyclerViewAdapter.onItemClickListener{
+            override fun onItemClick(position: Int) {
+                var itemSelected = carrito[position]
+                Toast.makeText(activity, "${itemSelected.nombre}",
+                    Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
 
     companion object {
         /**
@@ -49,11 +81,10 @@ class Pedido : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(carrito: ArrayList<ProductsModel>) =
             Pedido().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putParcelableArrayList(ARG_PARAM1, carrito)
                 }
             }
     }
